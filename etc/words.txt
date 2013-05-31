@@ -1,0 +1,74 @@
+{
+"words": [{
+  "_id": "4fd7be416819dc161b000002",
+  "created_at": "2012-09-18T20:45:44Z",
+  "definitions": [
+    {
+      "part_of_speech": "noun",
+      "definition": "the language, especially the vocabulary, peculiar to a particular trade, profession, or group: medical jargon."
+    },
+    {
+      "part_of_speech": "noun",
+      "definition": "unintelligible or meaningless talk or writing; gibberish."
+    }
+  ],
+  "spelling": "jargon",
+  "synonyms": [ "argot", "buzzwords" ]
+  },
+  
+  {
+  "_id": "4fd7bca5d95f54fe1a000001",
+  "definitions": [
+    {
+      "definition": "payment (as a tip or bribe) to expedite service",
+      "part_of_speech": "noun"
+    },
+    {
+      "part_of_speech": "verb",
+      "definition": "to give a tip."
+    }
+  ],
+  "spelling": "baksheesh",
+  "synonyms": []
+},
+
+{
+  "spelling": "mewl",
+  "_id": "4fd89e68bf0e36e421000002",
+  "synonyms": [],
+  "definitions": [
+    {
+      "definition": "To cry, as a baby, young child, or the like; whimper.",
+      "part_of_speech": "verb"
+    }
+  ]
+}, 
+
+{
+  "spelling": "sagacious",
+  "definitions": [
+    {
+      "part_of_speech": "adjective",
+      "definition": "having or showing acute mental discernment and keen practical sense; shrewd: a sagacious lawyer."
+    }
+  ]
+},
+
+{
+  "spelling": "loquacious",
+  "synonyms": [ "verbose","voluble"],
+  "definitions": [
+    {
+      "part_of_speech": "adjective",
+      "definition": "talking or tending to talk much or freely; talkative; chattering; babbling; garrulous: a loquacious dinner guest."
+    },
+    {
+      "part_of_speech": "adjective",
+      "definition": "characterized by excessive talk; wordy: easily the most loquacious play of the season."
+    }
+  ]
+}
+  
+  
+  ]
+}

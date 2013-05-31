@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="words-engine" default="compile" basedir=".">
+
+	<property name="version" value="1.1" />
+
+	<path id="classpath">
+		<fileset dir="./lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="./target" />
+	</target>
+
+	<target name="dist" depends="test" description="builds jar">
+		<jar basedir="target/classes" jarfile="target/words-engine-${version}.jar" />
+	</target>
+
+	<target name="compile" description="compiles source code">
+		<mkdir dir="target/classes" />
+
+		<javac srcdir="src" destdir="target/classes" includeAntRuntime="false" source="1.5" debug="true">
+			<classpath>
+				<path refid="classpath" />
+			</classpath>
+		</javac>
+	</target>
+
+
+
+	<target name="compile-tests" depends="compile" description="compiles test files only">
+		<mkdir dir="target/test-classes" />
+		<javac srcdir="./test" destdir="target/test-classes" includeAntRuntime="false" source="1.5" debug="true">
+			<classpath>
+				<path refid="classpath" />
+				<pathelement path="target/classes" />
+			</classpath>
+		</javac>
+	</target>
+
+
+
+	<target name="test" depends="compile-tests" description="runs JUnit tests">
+		<junit fork="true" forkmode="once" haltonfailure="false" haltonerror="false" failureproperty="tests.failures" errorproperty="tests.errors" includeantruntime="true" showoutput="true" printsummary="true">
+			<classpath>
+				<path refid="classpath" />
+				<pathelement path="target/test-classes" />
+				<pathelement path="target/classes" />
+			</classpath>
+
+			<formatter type="xml" />
+
+			<batchtest fork="yes" todir="./target/">
+				<fileset dir="./test">
+					<include name="**/*Test.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+
+		<mkdir dir="./target/reports" />
+
+		<junitreport todir="./target/reports">
+			<fileset dir="./target">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="./target/reports/html" />
+		</junitreport>
+
+
+		<fail if="tests.failures" message="There were JUnit failures -- see the reports in ./target/reports" />
+
+	</target>
+
+
+
+
+</project>

@@ -1,4 +1,4 @@
-# Thingamajig - Generic word-definition engine which permits studying and quizzing word definitions
+# Thingamajig - it's a what?
 
 This is a simple word-definition engine which permits studying and quizzing word definitions
 

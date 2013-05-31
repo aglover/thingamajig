@@ -4,15 +4,35 @@ This is a simple word-definition engine which permits studying and quizzing word
 
 ## Details
 
+`Word` instances (and their corresponding `Definition`s) are created via JSON documents that look like so:
+
+```
+{
+  "spelling": "sagacious",
+  "definitions": [
+    {
+      "part_of_speech": "adjective",
+      "definition": "having or showing acute mental discernment and keen practical sense; shrewd: a sagacious lawyer."
+    }
+  ]
+}
+```
+
+This document will create a `Word` instance containing a collection of one `Definition`. 
+
 ## Putting it all together
 
+Invoke `Word.manufacture` with a JSON document and you'll get back an init'ed `Word`. Initialize a `WordStudyEngine`, which is used to get randomized `Word` instances with a collection of `Word`s:
 
-### Further details
+```
+WordStudyEngine instance = WordStudyEngine.getInstance(words);
+```
 
+Note, there is a corresponding `WordTestEngine` as well -- same principle, this object returns instances of `TestableWord`. These have a `Word` instance along with a collection of throw off words. 
 
 ## Installation
 
-Clone the repo, change directories into the project's root and type `ant dist`. That'll build a .jar file you can include in any desired project. 
+Clone the repo, change directories into the project's root and type `ant dist`. That'll compile, run tests, and build a .jar file you can include in any desired project. 
 
 # License
 

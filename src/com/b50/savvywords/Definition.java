@@ -25,5 +25,4 @@ public class Definition {
 	public String getDefinition() {
 		return definition;
 	}
-
 }

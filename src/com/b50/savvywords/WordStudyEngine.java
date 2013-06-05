@@ -14,9 +14,10 @@ public class WordStudyEngine {
 
 	private WordStudyEngine(List<Word> words) {
 		this.words = new LinkedList<Word>(words);
+		this.randomizeStudy();
 	}
 
-	public void randomizeStudy() {
+	private void randomizeStudy() {
 		Collections.shuffle(this.words, new Random(System.currentTimeMillis()));
 	}
 

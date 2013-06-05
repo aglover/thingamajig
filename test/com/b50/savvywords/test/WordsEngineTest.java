@@ -57,7 +57,7 @@ public class WordsEngineTest {
 		WordStudyEngine instance = WordStudyEngine.getInstance(words);
 		assertNotNull(instance);
 
-		instance.randomizeStudy();
+//		instance.randomizeStudy();
 		Word firstWord = instance.getWord();
 		assertNotNull(firstWord);
 		Word secondWord = instance.getWord();
